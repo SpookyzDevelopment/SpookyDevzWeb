@@ -1,37 +1,92 @@
-// Website Configuration File
+// Global site configuration
 const SiteConfig = {
-    domain: "https://spookydevz.org",   // 🔧 Change your domain here
+    domain: "https://spookydevz.org",
     siteTitle: "Spooky Development",
-    logoPath: "/images/SDEVZ-LOGO.png",
-    faviconPath: "/images/SDEVZ-LOGO.png",
-    discordInvite: "https://discord.gg/spookydevz"
+    siteTagline: "Immersive experiences for daring players",
+    logoPath: "images/SDEVZ-LOGO.png",
+    faviconPath: "images/SDEVZ-LOGO.png",
+    discordInvite: "https://discord.gg/spookydevz",
+    contactEmail: "hello@spookydevz.org",
+    navigation: {
+        home: "index.html#top",
+        projects: "index.html#projects",
+        store: "shop.html",
+        community: "index.html#community",
+        contact: "index.html#contact",
+        discord: "https://discord.gg/spookydevz"
+    }
 };
 
-// Apply configuration to the page
-document.addEventListener("DOMContentLoaded", () => {
-    // Logo
-    const logo = document.getElementById("site-logo");
-    if (logo) logo.src = SiteConfig.logoPath;
+const absoluteUrl = (path) => {
+    if (!path || /^https?:/i.test(path) || path.startsWith("mailto:")) {
+        return path;
+    }
 
-    // Site Title
-    const title = document.getElementById("site-title");
-    if (title) title.textContent = SiteConfig.siteTitle;
+    if (path.startsWith("/")) {
+        try {
+            return new URL(path, SiteConfig.domain || window.location.origin).href;
+        } catch (error) {
+            console.warn("SiteConfig: unable to create absolute URL", error);
+            return path;
+        }
+    }
 
-    // Browser Tab Title
-    document.title = SiteConfig.siteTitle;
+    return path;
+};
 
-    // Favicon
-    let favicon = document.querySelector("link[rel='icon']");
-    if (favicon) {
+const applySiteConfig = () => {
+    const pageTitle = document.body?.dataset?.pageTitle || "";
+    const baseTitle = SiteConfig.siteTitle;
+    document.title = pageTitle ? `${baseTitle} • ${pageTitle}` : baseTitle;
+
+    const favicon = document.querySelector("link[rel='icon']");
+    if (favicon && SiteConfig.faviconPath) {
         favicon.href = SiteConfig.faviconPath;
     }
 
-    // Navbar links (use domain for internal pages)
-    const homeLink = document.getElementById("nav-home");
-    const storeLink = document.getElementById("nav-store");
-    const discordLink = document.getElementById("nav-discord");
+    document.querySelectorAll("[data-site-logo]").forEach((element) => {
+        if (SiteConfig.logoPath) {
+            element.setAttribute("src", SiteConfig.logoPath);
+        }
+    });
 
-    if (homeLink) homeLink.href = SiteConfig.domain + "/home";
-    if (storeLink) storeLink.href = SiteConfig.domain + "/store";
-    if (discordLink) discordLink.href = SiteConfig.discordInvite;
-});
+    document.querySelectorAll("[data-site-title]").forEach((element) => {
+        element.textContent = SiteConfig.siteTitle;
+    });
+
+    document.querySelectorAll("[data-site-tagline]").forEach((element) => {
+        if (SiteConfig.siteTagline) {
+            element.textContent = SiteConfig.siteTagline;
+        }
+    });
+
+    document.querySelectorAll("[data-contact-email]").forEach((element) => {
+        if (SiteConfig.contactEmail) {
+            element.textContent = SiteConfig.contactEmail;
+            element.setAttribute("href", `mailto:${SiteConfig.contactEmail}`);
+        }
+    });
+
+    const navLinks = document.querySelectorAll("[data-nav]");
+    navLinks.forEach((link) => {
+        const key = link.getAttribute("data-nav");
+        const target = SiteConfig.navigation?.[key];
+        if (!target) return;
+
+        const href = absoluteUrl(target);
+        if (href) {
+            link.setAttribute("href", href);
+        }
+
+        if (key === "discord") {
+            link.setAttribute("target", "_blank");
+            link.setAttribute("rel", "noopener noreferrer");
+        }
+    });
+
+    document.querySelectorAll("[data-current-year]").forEach((element) => {
+        element.textContent = new Date().getFullYear();
+    });
+};
+
+document.addEventListener("DOMContentLoaded", applySiteConfig);

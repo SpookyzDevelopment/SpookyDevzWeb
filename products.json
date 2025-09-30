@@ -2,12 +2,53 @@
   {
     "id": "vip",
     "name": "VIP Rank",
-    "description": "Unlock exclusive perks and early access.",
-    "stripePrice": "price_XXXX",
-    "amount": 5.00,
+    "description": "Unlock exclusive perks and early access to new features across the network.",
+    "amount": 8,
+    "currency": "USD",
+    "ctaLabel": "Become VIP",
+    "benefits": [
+      "Priority queue access",
+      "/fly & /nick commands",
+      "Monthly crate key"
+    ],
     "commands": [
       "lp user {player} parent add vip",
-      "tellraw {player} {\"text\":\"Thanks for supporting SpookyDevz! You are now VIP.\",\"color\":\"green\"}"
+      "mail send {player} Welcome to VIP!"
+    ]
+  },
+  {
+    "id": "mvp",
+    "name": "MVP Rank",
+    "description": "Everything in VIP plus exclusive cosmetics, boosters, and early build previews.",
+    "amount": 15,
+    "currency": "USD",
+    "ctaLabel": "Upgrade to MVP",
+    "benefits": [
+      "Animated particle trails",
+      "2x quest rewards",
+      "Private MVP lounge"
+    ],
+    "commands": [
+      "lp user {player} parent add mvp",
+      "give {player} mystic_crate 2"
+    ]
+  },
+  {
+    "id": "supporter-pack",
+    "name": "Supporter Bundle",
+    "description": "Directly support development and unlock the seasonal battle pass plus event cosmetics.",
+    "amount": 25,
+    "currency": "USD",
+    "ctaLabel": "Support the team",
+    "secondaryCta": "Gift to a friend",
+    "benefits": [
+      "Seasonal battle pass unlock",
+      "Exclusive supporter cape",
+      "Discord booster flair"
+    ],
+    "commands": [
+      "lp user {player} parent add supporter",
+      "crate give {player} supporter_bundle"
     ]
   }
 ]

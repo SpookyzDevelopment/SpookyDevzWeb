@@ -4,60 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loading...</title>
-
-    <!-- Favicon (will be replaced by config.js) -->
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-
-    <!-- CSS -->
+    <link rel="icon" type="image/png" href="images/SDEVZ-LOGO.png">
     <link rel="stylesheet" href="style.css">
-    <!-- Config Script -->
     <script src="config.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="shop.js" defer></script>
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="/images/SDEVZ-LOGO.png" alt="Logo" id="site-logo">
-            <span id="site-title">Loading...</span>
+<body data-page-title="Store">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="top">
+        <div class="container nav-container">
+            <a class="brand" href="index.html" aria-label="Spooky Development home">
+                <img src="images/SDEVZ-LOGO.png" alt="Spooky Development logo" class="brand-mark" data-site-logo>
+                <div class="brand-text">
+                    <span class="brand-title" data-site-title>Spooky Development</span>
+                    <span class="brand-tagline" data-site-tagline>Immersive experiences for daring players</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="primary-nav" id="primary-navigation" data-primary-nav>
+                <ul>
+                    <li><a data-nav="home">Home</a></li>
+                    <li><a data-nav="projects">Projects</a></li>
+                    <li><a data-nav="store">Store</a></li>
+                    <li><a data-nav="community">Community</a></li>
+                    <li><a data-nav="contact">Contact</a></li>
+                    <li class="nav-cta"><a data-nav="discord">Join Discord</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a id="nav-home" href="#">Home</a></li>
-                <li><a id="nav-store" href="#">Store</a></li>
-                <li><a id="nav-discord" href="#" target="_blank">Discord</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <h1>🛒 Spooky Devz Store</h1>
-        <p>
-            Welcome to the official <strong>Spooky Devz Store</strong>!  
-            Support development, unlock ranks, and purchase exclusive perks for our servers.
-        </p>
+    <main id="main-content">
+        <section class="page-hero" id="store">
+            <div class="container page-hero__content">
+                <div>
+                    <p class="eyebrow">Support the network</p>
+                    <h1>Unlock exclusive ranks, boosts, and cosmetics</h1>
+                    <p>
+                        Every purchase fuels new content, faster updates, and bigger community events. Choose the perks that fit your play style and watch the world evolve around you.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" data-nav="discord">Talk with our team</a>
+                        <a class="btn btn-secondary" data-nav="projects">Preview upcoming releases</a>
+                    </div>
+                </div>
+                <aside class="page-hero__card">
+                    <h2>Featured bundle</h2>
+                    <p>
+                        Bundle VIP rank with the seasonal cosmetic pack and save 15%. Includes instant access to the seasonal battle pass and exclusive particle effects.
+                    </p>
+                    <a class="btn btn-tertiary" data-nav="store">View bundle details</a>
+                </aside>
+            </div>
+        </section>
 
-        <div class="store-grid">
-            <div class="store-item">
-                <h2>VIP Rank</h2>
-                <p>Unlock exclusive perks, commands, and early access to updates.</p>
-                <button>Buy Now</button>
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Choose your perks</p>
+                    <h2>Flexible options for every kind of adventurer</h2>
+                    <p>
+                        Purchase through our secure checkout and receive your rewards instantly in-game. Looking for something custom? Drop us a message and we'll craft a tailored package.
+                    </p>
+                </div>
+
+                <div class="product-grid" data-products>
+                    <div class="loading-state">Loading store items&hellip;</div>
+                </div>
+
+                <p class="store-note">
+                    Need a custom deployment or partnership opportunity? Email <a data-contact-email href="mailto:hello@spookydevz.org">hello@spookydevz.org</a> and we'll schedule a strategy session.
+                </p>
             </div>
-            <div class="store-item">
-                <h2>MVP Rank</h2>
-                <p>Get advanced features, cosmetics, and increased rewards.</p>
-                <button>Buy Now</button>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container faq-grid">
+                <div class="section-heading">
+                    <p class="eyebrow">Questions answered</p>
+                    <h2>Store &amp; supporter FAQ</h2>
+                </div>
+                <div class="faq-list">
+                    <details open>
+                        <summary>How quickly are ranks applied?</summary>
+                        <p>Ranks are delivered instantly once your payment is confirmed. If you run into any issues, open a ticket in Discord and our staff will help right away.</p>
+                    </details>
+                    <details>
+                        <summary>Which payment methods do you support?</summary>
+                        <p>We partner with Stripe to support major credit cards, Apple Pay, Google Pay, and a growing list of regional payment methods.</p>
+                    </details>
+                    <details>
+                        <summary>Can I gift a rank to someone else?</summary>
+                        <p>Absolutely! Enter their in-game username during checkout and they'll receive the perks automatically.</p>
+                    </details>
+                    <details>
+                        <summary>Do purchases expire?</summary>
+                        <p>Permanent ranks never expire. Seasonal bundles remain active for the length of the season and include renewal reminders before they conclude.</p>
+                    </details>
+                </div>
             </div>
-            <div class="store-item">
-                <h2>Donation Pack</h2>
-                <p>Support the network directly and receive a thank-you bonus in-game.</p>
-                <button>Donate</button>
-            </div>
-        </div>
+        </section>
     </main>
 
-    <footer>
-        &copy; 2025 Spooky Devz • All rights reserved
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="images/SDEVZ-LOGO.png" alt="Spooky Development logo" data-site-logo>
+                <p data-site-tagline>Immersive experiences for daring players</p>
+                <a class="footer-discord" data-nav="discord">Join the Discord</a>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <ul>
+                    <li><a data-nav="home">Home</a></li>
+                    <li><a data-nav="projects">Projects</a></li>
+                    <li><a data-nav="store">Store</a></li>
+                    <li><a data-nav="community">Community</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <ul>
+                    <li><a data-nav="contact">Contact</a></li>
+                    <li><a data-nav="discord">Community Discord</a></li>
+                    <li><a data-nav="store">Creator perks</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul class="footer-contact">
+                    <li><a data-contact-email href="mailto:hello@spookydevz.org">hello@spookydevz.org</a></li>
+                    <li>Weekdays · 9am – 6pm EST</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span data-current-year>2025</span> <span data-site-title>Spooky Development</span>. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
