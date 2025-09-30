@@ -4,43 +4,313 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loading...</title>
-
-    <!-- Favicon (will be replaced by config.js) -->
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-
-    <!-- CSS -->
+    <link rel="icon" type="image/png" href="images/SDEVZ-LOGO.png">
     <link rel="stylesheet" href="style.css">
-    <!-- Config Script -->
     <script src="config.js" defer></script>
+    <script src="main.js" defer></script>
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="/images/SDEVZ-LOGO.png" alt="Logo" id="site-logo">
-            <span id="site-title">Loading...</span>
+<body data-page-title="Home">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="top">
+        <div class="container nav-container">
+            <a class="brand" href="index.html" aria-label="Spooky Development home">
+                <img src="images/SDEVZ-LOGO.png" alt="Spooky Development logo" class="brand-mark" data-site-logo>
+                <div class="brand-text">
+                    <span class="brand-title" data-site-title>Spooky Development</span>
+                    <span class="brand-tagline" data-site-tagline>Immersive experiences for daring players</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="primary-nav" id="primary-navigation" data-primary-nav>
+                <ul>
+                    <li><a data-nav="home">Home</a></li>
+                    <li><a data-nav="projects">Projects</a></li>
+                    <li><a data-nav="store">Store</a></li>
+                    <li><a data-nav="community">Community</a></li>
+                    <li><a data-nav="contact">Contact</a></li>
+                    <li class="nav-cta"><a data-nav="discord">Join Discord</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a id="nav-home" href="#">Home</a></li>
-                <li><a id="nav-store" href="#">Store</a></li>
-                <li><a id="nav-discord" href="#" target="_blank">Discord</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <h1>🚧 Development In Progress 🚧</h1>
-        <p>
-            Welcome to <strong>Spooky Development</strong>!  
-            This site will soon be the home of our projects, community store, and donation hub to support Spooky Devz directly.  
-            Stay tuned for exciting updates!
-        </p>
+    <main id="main-content">
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <p class="eyebrow">Minecraft Development Collective</p>
+                    <h1>
+                        Build unforgettable adventures with
+                        <span class="text-gradient" data-site-title>Spooky Development</span>.
+                    </h1>
+                    <p class="lead">
+                        We craft premium Minecraft networks, bespoke plugins, and vibrant community experiences for creators who refuse to blend in.
+                        From concept to launch, our team handles every detail so you can focus on the story you want to tell.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" data-nav="store">Explore the store</a>
+                        <a class="btn btn-secondary" data-nav="discord">Join the community</a>
+                    </div>
+                    <dl class="hero-metrics">
+                        <div>
+                            <dt>Servers launched</dt>
+                            <dd>40+</dd>
+                        </div>
+                        <div>
+                            <dt>Active community members</dt>
+                            <dd>12k+</dd>
+                        </div>
+                        <div>
+                            <dt>Updates shipped in 2024</dt>
+                            <dd>180</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="hero-media">
+                    <article class="glass-card">
+                        <header>
+                            <p class="eyebrow">Latest release</p>
+                            <h2>Phantom Realms Season III</h2>
+                        </header>
+                        <p>
+                            A high-stakes survival world featuring custom mobs, cinematic quests, and weekly live events engineered by our in-house developers.
+                        </p>
+                        <ul class="tag-list">
+                            <li>Custom AI</li>
+                            <li>Seasonal Battle Pass</li>
+                            <li>Live Ops Toolkit</li>
+                        </ul>
+                        <footer>
+                            <a class="btn btn-tertiary" data-nav="projects">See all projects</a>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="services">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">What we do</p>
+                    <h2>End-to-end services for ambitious Minecraft teams</h2>
+                    <p>
+                        Every release is supported by our multidisciplinary crew of developers, artists, and strategists. We deliver battle-tested infrastructure and polished gameplay that keeps players coming back.
+                    </p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <h3>Server Engineering</h3>
+                        <p>Optimize performance, scale with ease, and ship updates without downtime thanks to our tailored infrastructure.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>Gameplay Design</h3>
+                        <p>Custom plugins, balanced economies, and cinematic quests built to amplify your network's unique identity.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>Creative Direction</h3>
+                        <p>Branding, world-building, and marketing assets that give every season a signature look and feel.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>Live Operations</h3>
+                        <p>Launch roadmaps, community events, and monetization strategies crafted to sustain long-term engagement.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="projects">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Project spotlight</p>
+                    <h2>Recent launches from the Spooky Devz lab</h2>
+                </div>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <div class="project-card__header">
+                            <h3>Haunted Horizons</h3>
+                            <span class="project-tag">Adventure RPG</span>
+                        </div>
+                        <p>
+                            Dynamic storyline with branching quests, orchestrated boss battles, and reactive NPC factions that adapt to player decisions.
+                        </p>
+                        <ul>
+                            <li>Procedural world events</li>
+                            <li>Fully voiced questline</li>
+                            <li>In-game cinematics toolkit</li>
+                        </ul>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-card__header">
+                            <h3>Obsidian Outbreak</h3>
+                            <span class="project-tag">Competitive PvP</span>
+                        </div>
+                        <p>
+                            Ranked arena with seasonal ladders, spectator tools, and anti-cheat tuned for a fair fight at every skill level.
+                        </p>
+                        <ul>
+                            <li>Cross-network matchmaking</li>
+                            <li>Skill-based rewards engine</li>
+                            <li>Match replay system</li>
+                        </ul>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-card__header">
+                            <h3>WispWorks</h3>
+                            <span class="project-tag">Creative Sandbox</span>
+                        </div>
+                        <p>
+                            Player-driven building hub with modular tools, collaborative plots, and seasonal showcases for community artists.
+                        </p>
+                        <ul>
+                            <li>Blueprint marketplace</li>
+                            <li>Real-time collaboration</li>
+                            <li>Creator analytics portal</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="community">
+            <div class="container community-grid">
+                <div>
+                    <p class="eyebrow">Community-first</p>
+                    <h2>Powered by players who crave the thrill</h2>
+                    <p>
+                        We believe the best Minecraft experiences are built alongside the people who play them. From day-zero playtests to weekly Discord town halls, our community fuels every feature we ship.
+                    </p>
+                    <div class="community-actions">
+                        <a class="btn btn-primary" data-nav="discord">Join our Discord</a>
+                        <a class="btn btn-tertiary" data-nav="projects">Browse upcoming updates</a>
+                    </div>
+                </div>
+                <aside class="community-card">
+                    <h3>Inside the Discord</h3>
+                    <ul>
+                        <li><span>🛠️</span> Dev diaries &amp; sneak peeks every Friday</li>
+                        <li><span>🎮</span> Weekly community play sessions and tournaments</li>
+                        <li><span>🎁</span> Early access rewards for supporters &amp; boosters</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="process">
+            <div class="container process-grid">
+                <div class="section-heading">
+                    <p class="eyebrow">Our process</p>
+                    <h2>Launch ready in four collaborative phases</h2>
+                </div>
+                <ol class="process-steps">
+                    <li>
+                        <h3>Discover</h3>
+                        <p>Align on your vision, audience, and success metrics with a guided strategy workshop.</p>
+                    </li>
+                    <li>
+                        <h3>Design</h3>
+                        <p>Prototype core systems, refine player flows, and craft the content pipeline your team needs.</p>
+                    </li>
+                    <li>
+                        <h3>Develop</h3>
+                        <p>Ship optimized code, scalable infrastructure, and in-depth documentation for your staff.</p>
+                    </li>
+                    <li>
+                        <h3>Deploy &amp; Evolve</h3>
+                        <p>Launch confidently with live-ops support, analytics reviews, and a roadmap for the next chapter.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="container contact-grid">
+                <div>
+                    <p class="eyebrow">Let's build together</p>
+                    <h2>Ready to launch your next Minecraft universe?</h2>
+                    <p>
+                        Tell us about your idea, your timeline, and the players you're building for. We'll craft a tailored plan that brings your experience to life and keeps your community engaged for the long haul.
+                    </p>
+                    <div class="contact-details">
+                        <a class="contact-link" data-contact-email href="mailto:hello@spookydevz.org">hello@spookydevz.org</a>
+                        <span class="contact-note">We reply within two business days.</span>
+                    </div>
+                </div>
+                <form class="contact-form" aria-label="Contact form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Alex Builder" autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="project">Project goals</label>
+                        <textarea id="project" name="project" rows="4" placeholder="Share your vision, timelines, and must-have features..."></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Request a consultation</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="container cta-banner__content">
+                <div>
+                    <h2>Get early access to new drops &amp; seasonal events</h2>
+                    <p>Subscribe for release alerts, community highlights, and exclusive supporter rewards.</p>
+                </div>
+                <form class="cta-banner__form" aria-label="Newsletter signup">
+                    <input type="email" name="newsletter" placeholder="you@example.com" autocomplete="email">
+                    <button class="btn btn-primary" type="submit">Notify me</button>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        &copy; 2025 Spooky Devz • All rights reserved
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="images/SDEVZ-LOGO.png" alt="Spooky Development logo" data-site-logo>
+                <p data-site-tagline>Immersive experiences for daring players</p>
+                <a class="footer-discord" data-nav="discord">Join the Discord</a>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <ul>
+                    <li><a data-nav="home">Home</a></li>
+                    <li><a data-nav="projects">Projects</a></li>
+                    <li><a data-nav="store">Store</a></li>
+                    <li><a data-nav="community">Community</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <ul>
+                    <li><a data-nav="contact">Contact</a></li>
+                    <li><a data-nav="discord">Community Discord</a></li>
+                    <li><a data-nav="store">Creator perks</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul class="footer-contact">
+                    <li><a data-contact-email href="mailto:hello@spookydevz.org">hello@spookydevz.org</a></li>
+                    <li>Weekdays · 9am – 6pm EST</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span data-current-year>2025</span> <span data-site-title>Spooky Development</span>. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
