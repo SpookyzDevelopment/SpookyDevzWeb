@@ -1,0 +1,13 @@
+[
+  {
+    "id": "vip",
+    "name": "VIP Rank",
+    "description": "Unlock exclusive perks and early access.",
+    "stripePrice": "price_XXXX",
+    "amount": 5.00,
+    "commands": [
+      "lp user {player} parent add vip",
+      "tellraw {player} {\"text\":\"Thanks for supporting SpookyDevz! You are now VIP.\",\"color\":\"green\"}"
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "site": {
+    "domain": "https://your-domain.com",
+    "title": "Spooky Development",
+    "discordInvite": "https://discord.gg/spookydevz"
+  },
+  "stripe": {
+    "publicKey": "pk_live_XXXX",                
+    "secretKey": "sk_live_XXXX",                
+    "webhookSecret": "whsec_XXXX",              
+    "currency": "usd",
+    "successUrl": "https://your-domain.com/success?session_id={CHECKOUT_SESSION_ID}",
+    "cancelUrl": "https://your-domain.com/cancel"
+  },
+  "pterodactyl": {
+    "baseUrl": "https://panel.spookydevz.org",
+    "clientApiKey": "ptlc_XXXX",                
+    "serverId": "abcdefgh"                      
+}
+}
